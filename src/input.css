@@ -24,6 +24,14 @@
     .no-scrollbar::-webkit-scrollbar {
         display: none;
     }
+    @media (max-width: 450px) {
+        .mb-gap-450 {
+            gap: 40px;
+        }
+        .mb-size {
+            size: 16rem;
+        }
+    }
 }
 
 @layer components {
