@@ -710,6 +710,15 @@ video {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 
+@media (max-width: 450px) {
+  .mob-button {
+    width: 4rem;
+    height: 1.55rem;
+    font-size: 1.275rem;
+    line-height: auto;
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -834,20 +843,8 @@ video {
   width: 2.75rem;
 }
 
-.w-auto {
-  width: auto;
-}
-
 .w-screen {
   width: 100vw;
-}
-
-.w-svw {
-  width: 100svw;
-}
-
-.w-lvw {
-  width: 100lvw;
 }
 
 .scale-100 {
@@ -1140,12 +1137,17 @@ video {
 }
 
 @media (max-width: 450px) {
-  .mb-gap-450 {
-    gap: 40px;
+  .mob-gap-450 {
+    gap: 90px;
   }
 
-  .mb-size {
-    size: 16rem;
+  .mob-size {
+    width: 300px;
+    height: 300px;
+  }
+
+  .mob-gap-buttons {
+    gap: 1rem;
   }
 }
 

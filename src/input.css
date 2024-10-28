@@ -25,11 +25,15 @@
         display: none;
     }
     @media (max-width: 450px) {
-        .mb-gap-450 {
-            gap: 40px;
+        .mob-gap-450 {
+            gap: 90px;
         }
-        .mb-size {
-            size: 16rem;
+        .mob-size {
+            width: 300px;
+            height: 300px;
+        }
+        .mob-gap-buttons {
+            gap: 1rem;
         }
     }
 }
@@ -126,5 +130,13 @@
     }
     .custom-nav-font {
         @apply before:w-full before:h-full relative before:absolute before:top-0 before:left-0 before:bg-gradient-to-b from-transparent via-transparent to-slate-950 before:rounded-lg transition-all duration-300 flex items-end;
+    }
+    @media (max-width: 450px) {
+        .mob-button {
+            width: 4rem;
+            height: 1.55rem;
+            font-size: 1.275rem;
+            line-height: auto;
+        }
     }
 }

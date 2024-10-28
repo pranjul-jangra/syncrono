@@ -16,7 +16,7 @@
     </div>
 
     <!-- navigation panel --> 
-    <nav class="w-lvw h-14 bg-slate-900 text-white uppercase text-xl font-bold flex justify-center items-center border-b-2 border-b-slate-950 gap-48 mb-gap-450 shadow-inner shadow-black relative mx-0 px-0">
+    <nav class="w-screen h-14 bg-slate-900 text-white uppercase text-xl font-bold flex justify-center items-center border-b-2 border-b-slate-950 gap-48 mob-gap-450 shadow-inner shadow-black relative mx-0 px-0">
 
         <!-- stopWatch font -->
         <div id="stopWatchFont" class="order-2 scale-100 text-shadow-white custom-nav-font">
@@ -41,7 +41,7 @@
 
     <div id="container">
         <!-- clock: watch your time -->
-        <section id="clock" class="relative bg-slate-700 size-96 mb-size mt-10 box-border border-8 border-black border-double flex flex-col justify-center items-center gap-3 rounded-full mx-auto shadow-custom">
+        <section id="clock" class="relative bg-slate-700 size-96 mob-size mt-10 box-border border-8 border-black border-double flex flex-col justify-center items-center gap-3 rounded-full mx-auto shadow-custom">
             <h2 id="clock-title" class="sr-only">Online Clock : track your time over internet</h2>
             <!-- toggle button  -->
             <div class="mb-3 absolute top-16 left-auto flex justify-center items-center gap-1 text-md border-b-2 border-b-slate-400">
@@ -66,14 +66,14 @@
         </section>
 
         <!-- stopWAtch: change your time -->
-        <section id="stopWatch" class="bg-slate-700 size-96 mt-10 box-border border-8 border-black border-double flex flex-col justify-center items-center gap-3 rounded-full mx-auto shadow-custom">
+        <section id="stopWatch" class="bg-slate-700 size-96 mob-size mt-10 box-border border-8 border-black border-double flex flex-col justify-center items-center gap-3 rounded-full mx-auto shadow-custom">
             <h2 id="stopwatch-title" class="sr-only">Stopwatch : record your time over internet</h2>
 
             <div id="stopWatchDisplay" class="font-bold text-3xl text-shadow-black-lg text-white">00: 00: 00</div>
-            <div class="mt-8 flex gap-6 select-none">
-                <button id="start" class="button hover:shadow-sm hover:shadow-green-600">start</button>
-                <button id="stop" class="button hidden hover:shadow-sm hover:shadow-yellow-600">stop</button>
-                <button id="reset" class="button hidden hover:shadow-sm hover:shadow-red-600">reset</button>
+            <div class="mt-8 flex gap-6 mob-gap-buttons select-none">
+                <button id="start" class="button mob-button hover:shadow-sm hover:shadow-green-600">start</button>
+                <button id="stop" class="button mob-button hidden hover:shadow-sm hover:shadow-yellow-600">stop</button>
+                <button id="reset" class="button mob-button hidden hover:shadow-sm hover:shadow-red-600">reset</button>
             </div>
 
         </section>
