@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Clock & Stopwatch: Track, Watch and Manage Your Time</title>
+    <meta name="description" content="Track, watch, and manage your time with our online clock and stopwatch. Customize your time management experience.">
+    <title>Online Clock & Stopwatch: Track, Watch, and Manage Your Time</title>
     <link rel="stylesheet" href="output.css">
 </head>
 <body class="bg-slate-800 cursor-default w-screeen h-screen box-border overflow-hidden no-scrollbar">
@@ -41,6 +42,7 @@
     <div id="container">
         <!-- clock: watch your time -->
         <section id="clock" class="relative bg-slate-700 size-96 mt-10 box-border border-8 border-black border-double flex flex-col justify-center items-center gap-3 rounded-full mx-auto shadow-custom">
+            <h2 id="clock-title" class="sr-only">Clock : track your time</h2>
             <!-- toggle button  -->
             <div class="mb-3 absolute top-16 left-auto flex justify-center items-center gap-1 text-md border-b-2 border-b-slate-400">
                 <div id="twelveFormat" class="text-green-500 font-semibold text-shadow-black-sm">12 hour</div>
@@ -65,6 +67,7 @@
 
         <!-- stopWAtch: change your time -->
         <section id="stopWatch" class="bg-slate-700 size-96 mt-10 box-border border-8 border-black border-double flex flex-col justify-center items-center gap-3 rounded-full mx-auto shadow-custom">
+            <h2 id="stopwatch-title" class="sr-only">Stopwatch : record your time</h2>
 
             <div id="stopWatchDisplay" class="font-bold text-3xl text-shadow-black-lg text-white">00: 00: 00</div>
             <div class="mt-8 flex gap-6 select-none">
