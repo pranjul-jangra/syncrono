@@ -1138,12 +1138,12 @@ video {
 
 @media (max-width: 450px) {
   .mob-gap-450 {
-    gap: 90px;
+    gap: 85px;
   }
 
   .mob-size {
-    width: 300px;
-    height: 300px;
+    width: 320px;
+    height: 320px;
   }
 
   .mob-gap-buttons {
