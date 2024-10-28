@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Clock & Stopwatch: Track, Watch and Manage Your Time</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-slate-800 cursor-default w-screeen h-screen box-border overflow-hidden no-scrollbar">
+    
+    <!-- loader -->
+    <div id="loader" class="w-screen h-screen flex justify-center items-center flex-col fixed top-0 left-0 z-50 loader-bg">
+        <img src="confused.svg" alt="wait" class="size-14 mb-1 animation-loader z-50">
+        <div class="text-white text-3xl font-bold z-50">Loading...</div>
+    </div>
+
+    <!-- navigation panel --> 
+    <nav class="w-full h-14 bg-slate-900 text-white uppercase text-xl font-bold flex justify-center items-center border-b-2 border-b-slate-950 gap-48 shadow-inner shadow-black relative">
+
+        <!-- stopWatch font -->
+        <div id="stopWatchFont" class="order-2 scale-100 text-shadow-white custom-nav-font">
+            <p id="stopWatchP1" class="text-gray-600 transition-all duration-500 text-4xl">
+                S
+                <p id="stopWatchP2" class="text-gray-400 text-md relative before:w-full before:h-0.5 before:absolute before:left-0 before:bottom-3 before:bg-red-500 transition-all duration-300 before:-translate-y-0 before:transition-all before:duration-300">
+                    topwatch
+                </p>
+            </p>
+        </div>
+
+        <!-- clock font  -->
+        <div id="clockFont" class="scale-100 text-shadow-white custom-nav-font">
+            <p id="clockP1" class="text-gray-600 transition-all duration-500 text-4xl">
+                C
+                <p id="clockP2" class="text-gray-400 text-md relative before:w-full before:h-0.5 before:bg-red-500 before:absolute before:left-0 before:bottom-3 transition-all duration-300 before:-translate-y-0 before:transition-all before:duration-300">
+                    lock
+                </p>
+            </p>
+        </div>
+    </nav>
+
+    <div id="container">
+        <!-- clock: watch your time -->
+        <section id="clock" class="relative bg-slate-700 size-96 mt-10 box-border border-8 border-black border-double flex flex-col justify-center items-center gap-3 rounded-full mx-auto shadow-custom">
+            <!-- toggle button  -->
+            <div class="mb-3 absolute top-16 left-auto flex justify-center items-center gap-1 text-md border-b-2 border-b-slate-400">
+                <div id="twelveFormat" class="text-green-500 font-semibold text-shadow-black-sm">12 hour</div>
+                
+                <div id="changeFormat" class="w-11 h-4 rounded-full border-2 border-black bg-yellow-300 box-content before:size-4 before:rounded-full before:bg-black relative before:absolute before:top-0 before:left-0 before:translate-x-0 before:transition-all before:duration-300"></div>
+
+                <div id="twentyFourFormat" class="text-slate-400 font-semibold text-shadow-black-sm">24 hour</div>
+            </div>
+            <!-- clock display-->
+            <div class="flex items-end text-white">
+                <div id="clockDisplay" class="font-bold text-3xl mr-5 text-shadow-black-lg">00: 00: 00</div>
+                <div id="meridiems" class="font-semibold text-lime-300 border-l-2 border-t-2 shadow-sm shadow-teal-100 border-yellow-200 px-1 text-sm text-shadow-black-sm rounded-sm"></div>
+            </div>
+            <div id="calendar" class="flex gap-5 font-bold">
+                <div id="year" class="shadow-sm shadow-teal-50 text-md font-semibold text-purple-400 px-1 mt-5 text-shadow-black-sm">year</div>
+                <div id="month" class="shadow-sm shadow-teal-50 text-md font-semibold text-purple-400 px-1 mt-5 text-shadow-black-sm">month</div>
+                <div id="date" class="shadow-sm shadow-teal-50 text-md font-semibold text-purple-400 px-1 mt-5 text-shadow-black-sm">date</div>
+                <div id="day" class="shadow-sm shadow-teal-50 text-md font-semibold text-purple-400 px-1 mt-5 text-shadow-black-sm">day</div>
+            </div>
+
+        </section>
+
+        <!-- stopWAtch: change your time -->
+        <section id="stopWatch" class="bg-slate-700 size-96 mt-10 box-border border-8 border-black border-double flex flex-col justify-center items-center gap-3 rounded-full mx-auto shadow-custom">
+
+            <div id="stopWatchDisplay" class="font-bold text-3xl text-shadow-black-lg text-white">00: 00: 00</div>
+            <div class="mt-8 flex gap-6 select-none">
+                <button id="start" class="button hover:shadow-sm hover:shadow-green-600">start</button>
+                <button id="stop" class="button hidden hover:shadow-sm hover:shadow-yellow-600">stop</button>
+                <button id="reset" class="button hidden hover:shadow-sm hover:shadow-red-600">reset</button>
+            </div>
+
+        </section>
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
