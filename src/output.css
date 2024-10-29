@@ -835,10 +835,6 @@ video {
   height: 1rem;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .h-lvh {
   height: 100lvh;
 }
