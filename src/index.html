@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="clock.ico">
     <link rel="stylesheet" href="output.css">
 </head>
-<body class="bg-slate-800 cursor-default box-border no-scrollbar">
+<body class="gradient-body h-screen cursor-default box-border no-scrollbar">
     
     <!-- loader -->
     <div id="loader" class="w-screen h-screen flex justify-center items-center flex-col fixed top-0 left-0 z-50 loader-bg">
@@ -28,7 +28,7 @@
                 </p>
             </p>
         </div>
-
+        
         <!-- clock font  -->
         <div id="clockFont" class="scale-100 text-shadow-white custom-nav-font">
             <p id="clockP1" class="text-gray-600 transition-all duration-500 text-4xl nav-text1-screen-385">
@@ -42,7 +42,7 @@
     
     <div id="container">
         <!-- clock: watch your time -->
-        <section id="clock" class="relative bg-slate-700 size-96 mob-size mt-10 box-border border-8 border-black border-double flex flex-col justify-center items-center gap-3 rounded-full mx-auto shadow-custom container-screen-385">
+        <section id="clock" class="relative bg-slate-800 size-96 mob-size mt-10 box-border border-8 border-black border-solid flex flex-col justify-center items-center gap-3 rounded-full mx-auto shadow-custom container-screen-385 gradient-custom bg-blend-difference">
             <h2 id="clock-title" class="sr-only">Online Clock : track your time over internet</h2>
             <!-- toggle button  -->
             <div class="mb-3 absolute top-16 left-auto flex justify-center items-center gap-1 text-md border-b-2 border-b-slate-400">
@@ -57,29 +57,29 @@
                 <div id="clockDisplay" class="font-bold text-3xl mr-5 text-shadow-black-lg">00: 00: 00</div>
                 <div id="meridiems" class="font-semibold text-lime-300 border-l-2 border-t-2 shadow-sm shadow-teal-100 border-yellow-200 px-1 text-sm text-shadow-black-sm rounded-sm"></div>
             </div>
-            <div id="calendar" class="w-full flex justify-center mt-10 gap-x-5 grid-screen-385 capitalize relative before:w-full before:h-1 before:absolute before:-top-1 before:left-0 before:bg-gradient-to-r before:from-transparent before:via-slate-500 before:to-transparent text-md font-semibold">
+            <div id="calendar" class="w-full flex justify-center mt-10 gap-x-5 grid-screen-385 capitalize relative before:w-full before:h-1 before:absolute before:-top-1 before:left-0 before:bg-gradient-to-r before:from-transparent before:via-slate-500 before:to-transparent text-md font-semibold text-slate-300 text-shadow-black-lg">
                 <div class="flex flex-col items-center">
                     <div class="text-sm font-bold">year:</div>
-                    <div id="year" class="shadow-sm shadow-teal-50  text-purple-400 px-1 text-center text-shadow-black-sm">year</div>
+                    <div id="year" class="shadow-sm shadow-teal-50  text-purple-400 px-1 text-center text-shadow-black-sm rounded-sm">year</div>
                 </div>
                 <div class="flex flex-col items-center">
                     <div class="text-sm font-bold">month:</div>
-                    <div id="month" class="shadow-sm shadow-teal-50  text-purple-400 px-1 text-center text-shadow-black-sm">month</div>
+                    <div id="month" class="shadow-sm shadow-teal-50  text-purple-400 px-1 text-center text-shadow-black-sm rounded-sm">month</div>
                 </div>
                 <div class="flex flex-col items-center">
                     <div class="text-sm font-bold">date:</div>
-                    <div id="date" class="shadow-sm shadow-teal-50  text-purple-400 px-1 text-center text-shadow-black-sm">date</div>
+                    <div id="date" class="shadow-sm shadow-teal-50  text-purple-400 px-2 text-center text-shadow-black-sm rounded-sm">date</div>
                 </div>
                 <div class="flex flex-col items-center">
                     <div class="text-sm font-bold">day:</div>
-                    <div id="day" class="shadow-sm shadow-teal-50  text-purple-400 px-1 text-center text-shadow-black-sm">day</div>
+                    <div id="day" class="shadow-sm shadow-teal-50  text-purple-400 px-1 text-center text-shadow-black-sm rounded-sm">day</div>
                 </div>
             </div>
 
         </section>
         
         <!-- stopWAtch: change your time -->
-        <section id="stopWatch" class="bg-slate-700 size-96 mob-size mt-10 box-border border-8 border-black border-double flex flex-col justify-center items-center gap-3 rounded-full mx-auto shadow-custom container-screen-385">
+        <section id="stopWatch" class="size-96 bg-slate-800 mob-size mt-10 box-border border-8 border-black border-solid flex flex-col justify-center items-center gap-3 rounded-full mx-auto shadow-custom container-screen-385 gradient-custom bg-blend-difference">
             <h2 id="stopwatch-title" class="sr-only">Stopwatch : record your time over internet</h2>
 
             <div id="stopWatchDisplay" class="font-bold text-3xl text-shadow-black-lg text-white">00: 00: 00</div>
