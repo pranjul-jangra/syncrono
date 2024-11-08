@@ -25,15 +25,36 @@
         display: none;
     }
     @media (max-width: 450px) {
-        .mob-gap-450 {
+        .gap-screen-450 {
             gap: 85px;
         }
         .mob-size {
-            width: 350px;
-            height: 350px;
+            size: 350px;
         }
         .mob-gap-buttons {
             gap: 1rem;
+        }
+    }
+    @media (max-width: 385px) {
+        .container-screen-385 {
+            width: 95vw;
+            border: 4px solid black;
+            border-radius: 34px;
+            margin-top: 24px;
+        }
+        .gap-screen-385 {
+            gap: 38px;
+        }
+        .nav-text1-screen-385 {
+            font-size: 1.85rem;
+        }
+        .nav-text2-screen-385 {
+            font-size: 1.1rem;
+        }
+        .grid-screen-385 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 4px;
         }
     }
 }
