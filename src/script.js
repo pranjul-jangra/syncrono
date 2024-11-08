@@ -1,3 +1,22 @@
+let body = document.querySelector('body');
+let screenWidth = window.innerWidth;
+window.addEventListener('load', () => {
+    if (screenWidth > 880) {
+        body.classList.replace('before:translate-y-0', 'before:translate-y-1/2');
+    } else if (screenWidth <= 880) {
+        body.classList.add('before:hidden');
+    }
+});
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 880) {
+        body.classList.replace('before:translate-y-1/2', 'before:translate-y-0');
+    } else {
+        body.classList.replace('before:translate-y-0', 'before:translate-y-1/2');
+    }
+});
+
+
+
 //                                         STOP WATCH: MANIPULATE YOUR TIME
 
 // DOM getters

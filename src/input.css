@@ -6,6 +6,16 @@
     .gradient-custom {
         background-image: linear-gradient(to top left, #334155dc 50%, rgba(158, 130, 134, 0.772) 50%);
     }
+    .body-before-shadow {
+        box-shadow: 0 0 20px rgb(181, 186, 173);
+        background-image: url(bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: blur(1px);
+        z-index: -1;
+    }
+    /* linear-gradient(to top, rgba(0, 0, 0, 0.902), rgb(165, 165, 165)) */
     .gradient-body {
         background-image: linear-gradient(to top right, #1e293b, #131a26e8, #131a26e8, #131a26e8, #131a26e8, #1e293b);
     }
@@ -48,7 +58,6 @@
             border-radius: 34px;
             margin-top: 24px;
         }
-        /* #334155, #293341, rgb(249, 221, 225) 2%, #293341, #334155 */
         .gap-screen-385 {
             gap: 38px;
         }
