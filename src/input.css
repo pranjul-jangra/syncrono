@@ -4,10 +4,10 @@
 
 @layer utilities {
     .gradient-custom {
-        background-image: linear-gradient(to top left, #334155 50%, rgb(158, 130, 134) 50%);
+        background-image: linear-gradient(to top left, #334155dc 50%, rgba(158, 130, 134, 0.772) 50%);
     }
     .gradient-body {
-        background-image: linear-gradient(to top right, #1e293b, #131a26, #131a26, #131a26, #131a26, #1e293b);
+        background-image: linear-gradient(to top right, #1e293b, #131a26e8, #131a26e8, #131a26e8, #131a26e8, #1e293b);
     }
     .shadow-custom {
         box-shadow:
