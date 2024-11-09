@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="clock.ico">
     <link rel="stylesheet" href="output.css">
 </head>
-<body class="bg-black h-screen cursor-default box-border no-scrollbar hide-scrollbar before:size-full before:fixed before:-top-full before:translate-y-0 before:left-0 before:body-before-bg before:transition-all before:duration-1000">
+<body class="bg-black h-svh overflow-hidden cursor-default box-border no-scrollbar hide-scrollbar before:size-full before:fixed before:-top-full before:translate-y-0 before:left-0 before:body-before-bg before:transition-all before:duration-1000">
     
     <!-- loader -->
     <div id="loader" class="w-screen h-screen flex justify-center items-center flex-col fixed top-0 left-0 z-50 loader-bg">
@@ -79,7 +79,7 @@
         </section>
         
         <!-- stopWAtch: change your time -->
-        <section id="stopWatch" class="size-96 bg-slate-400 mob-size mt-10 box-border border-8 border-black border-solid flex flex-col justify-center items-center gap-3 rounded-full mx-auto container-shadow container-screen-385 container-bg-gradient bg-blend-color-burn">
+        <section id="stopWatch" class="size-96 bg-slate-400 mob-size mt-10 box-border border-8 border-black border-solid flex flex-col justify-center items-center gap-3 rounded-full mx-auto container-shadow container-screen-385 container-bg-gradient bg-blend-color-burn hidden">
             <h2 id="stopwatch-title" class="sr-only">Stopwatch : record your time over internet</h2>
 
             <div id="stopWatchDisplay" class="font-bold text-3xl text-shadow-black-lg text-white">00: 00: 00</div>

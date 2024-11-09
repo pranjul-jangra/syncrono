@@ -830,6 +830,10 @@ video {
   height: 100vh;
 }
 
+.h-svh {
+  height: 100svh;
+}
+
 .w-11 {
   width: 2.75rem;
 }
@@ -899,6 +903,10 @@ video {
 .gap-x-5 {
   -moz-column-gap: 1.25rem;
        column-gap: 1.25rem;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .rounded-full {
