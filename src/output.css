@@ -864,10 +864,6 @@ video {
           user-select: none;
 }
 
-.resize {
-  resize: both;
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -960,6 +956,11 @@ video {
 .border-b-slate-950 {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(2 6 23 / var(--tw-border-opacity));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-slate-400 {
@@ -1121,17 +1122,11 @@ video {
   transition-duration: 500ms;
 }
 
-.gradient-custom {
+.container-bg-gradient {
   background-image: linear-gradient(to top left, #334155dc 50%, rgba(158, 130, 134, 0.772) 50%);
 }
 
-/* linear-gradient(to top, rgba(0, 0, 0, 0.902), rgb(165, 165, 165)) */
-
-.gradient-body {
-  background-image: linear-gradient(to top right, #1e293b, #131a26e8, #131a26e8, #131a26e8, #131a26e8, #1e293b);
-}
-
-.shadow-custom {
+.container-shadow {
   box-shadow:
             inset 0 0 12px gray,
             0 0 10px black;
@@ -1147,6 +1142,11 @@ video {
 
 .text-shadow-black-sm {
   text-shadow: 0.8px 1.5px black;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -1229,11 +1229,6 @@ video {
   top: 0px;
 }
 
-.before\:hidden::before {
-  content: var(--tw-content);
-  display: none;
-}
-
 .before\:size-4::before {
   content: var(--tw-content);
   width: 1rem;
@@ -1291,9 +1286,9 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.before\:translate-y-1\/2::before {
+.before\:translate-y-full::before {
   content: var(--tw-content);
-  --tw-translate-y: 50%;
+  --tw-translate-y: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1354,14 +1349,13 @@ video {
   transition-duration: 300ms;
 }
 
-.before\:body-before-shadow::before {
+.before\:body-before-bg::before {
   content: var(--tw-content);
-  box-shadow: 0 0 20px rgb(181, 186, 173);
   background-image: url(bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  filter: blur(1px);
+  filter: grayscale(0.8) brightness(0.7);
   z-index: -1;
 }
 

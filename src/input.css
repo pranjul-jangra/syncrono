@@ -3,23 +3,18 @@
 @tailwind utilities;
 
 @layer utilities {
-    .gradient-custom {
+    .container-bg-gradient {
         background-image: linear-gradient(to top left, #334155dc 50%, rgba(158, 130, 134, 0.772) 50%);
     }
-    .body-before-shadow {
-        box-shadow: 0 0 20px rgb(181, 186, 173);
+    .body-before-bg {
         background-image: url(bg.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        filter: blur(1px);
+        filter: grayscale(0.8) brightness(0.7);
         z-index: -1;
     }
-    /* linear-gradient(to top, rgba(0, 0, 0, 0.902), rgb(165, 165, 165)) */
-    .gradient-body {
-        background-image: linear-gradient(to top right, #1e293b, #131a26e8, #131a26e8, #131a26e8, #131a26e8, #1e293b);
-    }
-    .shadow-custom {
+    .container-shadow {
         box-shadow:
             inset 0 0 12px gray,
             0 0 10px black;
