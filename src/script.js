@@ -161,52 +161,55 @@ changeFormat.addEventListener('click', () => {
 });
 
 //main function for clock time
-setInterval(() => {
-    //time
-    let dateObject = new Date();
-    let minutes = dateObject.getMinutes();
-    let seconds = dateObject.getSeconds();
-    let hours = dateObject.getHours();
-    let min = `0${minutes}`;
-    let sec = `0${seconds}`;
-    let hr = `0${hours}`;
+async function startTime() {
+    setInterval(() => {
+        //time
+        let dateObject = new Date();
+        let minutes = dateObject.getMinutes();
+        let seconds = dateObject.getSeconds();
+        let hours = dateObject.getHours();
+        let min = `0${minutes}`;
+        let sec = `0${seconds}`;
+        let hr = `0${hours}`;
 
-    if (timeFormat === '12hours') {
-        if (hours === 0) {
-            hours = 12;
-        } else if (hours > 12) {
-            hours -= 12;
-            hr = `0${hours}`;
+        if (timeFormat === '12hours') {
+            if (hours === 0) {
+                hours = 12;
+            } else if (hours > 12) {
+                hours -= 12;
+                hr = `0${hours}`;
+            };
+            clockDisplay.textContent = `${hours.toString().length === 2 ? hours : hr}:
+        ${minutes.toString().length === 2 ? minutes : min}:
+        ${seconds.toString().length === 2 ? seconds : sec}`;
+        } else {
+            clockDisplay.textContent = `${hours.toString().length === 2 ? hours : hr}:
+        ${minutes.toString().length === 2 ? minutes : min}:
+        ${seconds.toString().length === 2 ? seconds : sec}`;
         };
-        clockDisplay.textContent = `${hours.toString().length === 2 ? hours : hr}:
-        ${minutes.toString().length === 2 ? minutes : min}:
-        ${seconds.toString().length === 2 ? seconds : sec}`;
-    } else {
-        clockDisplay.textContent = `${hours.toString().length === 2 ? hours : hr}:
-        ${minutes.toString().length === 2 ? minutes : min}:
-        ${seconds.toString().length === 2 ? seconds : sec}`;
-    };
 
-    //meridiems
-    if (dateObject.getHours() < 12) {
-        meridiem = 'AM';
-    } else {
-        meridiem = 'PM';
-    };
-    meridiems.textContent = `${meridiem}`;
+        //meridiems
+        if (dateObject.getHours() < 12) {
+            meridiem = 'AM';
+        } else {
+            meridiem = 'PM';
+        };
+        meridiems.textContent = `${meridiem}`;
 
-    //year/month/date/day
-    let year = dateObject.getFullYear();
-    let month = months[dateObject.getMonth()];
-    let date = dateObject.getDate();
-    let day = days[dateObject.getDay()];
+        //year/month/date/day
+        let year = dateObject.getFullYear();
+        let month = months[dateObject.getMonth()];
+        let date = dateObject.getDate();
+        let day = days[dateObject.getDay()];
 
-    yearDisplay.textContent = `${year}`;
-    monthDisplay.textContent = `${month}`;
-    dateDisplay.textContent = `${date}`;
-    dayDisplay.textContent = `${day}`;
+        yearDisplay.textContent = `${year}`;
+        monthDisplay.textContent = `${month}`;
+        dateDisplay.textContent = `${date}`;
+        dayDisplay.textContent = `${day}`;
 
-}, 1000);
+    }, 1000);
+};
+startTime();
 
 
 
