@@ -1,10 +1,3 @@
-let body = document.querySelector('body');
-window.addEventListener('load', () => {
-    body.classList.replace('before:translate-y-0', 'before:translate-y-full');
-});
-
-
-
 //                                         STOP WATCH: MANIPULATE YOUR TIME
 
 // DOM getters
@@ -29,7 +22,7 @@ function disableButton(target) {
     target.classList.add('bg-slate-400', 'opacity-70', 'border-gray-900');
 };
 
-// changing the state of time
+// stopWatch timing and manipulating buttons
 start.addEventListener('click', (e) => {
     target = start;
     manipulateTime = setInterval(() => {
