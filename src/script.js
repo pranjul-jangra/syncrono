@@ -9,7 +9,7 @@ let reset = document.querySelector('#reset');
 //initial values
 let target;
 let hours = 0, minutes = 0, seconds = 0;
-let manipulateTime = 'intervalFunction';
+let manipulateTime = null;
 
 // function for disabling buttons conditionaly when not neccessary
 function disableButton(target) {
@@ -90,10 +90,46 @@ stopWatchFont.addEventListener('click', () => {
     activeItem();
 });
 
+// function activeItem() {
+//     if (navigatedItem === 'clock') {
+//         showClock.classList.remove('hidden');
+//         showStopWatch.classList.add('hidden');
+//         clockFont.classList.replace('scale-100', 'scale-125');
+//         clockP1.classList.replace('text-gray-600', 'text-red-500');
+//         clockP2.classList.replace('text-gray-400', 'text-white');
+//         clockP2.classList.replace('before:-translate-y-0', 'before:-translate-y-3');
+
+//         stopWatchFont.classList.replace('scale-125', 'scale-100');
+//         stopWatchP1.classList.replace('text-red-500', 'text-gray-600');
+//         stopWatchP2.classList.replace('text-white', 'text-gray-400');
+//         stopWatchP2.classList.replace('before:-translate-y-3', 'before:-translate-y-0');
+//     } else {
+//         showStopWatch.classList.remove('hidden');
+//         showClock.classList.add('hidden');
+//         stopWatchFont.classList.replace('scale-100', 'scale-125');
+//         stopWatchP1.classList.replace('text-gray-600', 'text-red-500');
+//         stopWatchP2.classList.replace('text-gray-400', 'text-white');
+//         stopWatchP2.classList.replace('before:-translate-y-0', 'before:-translate-y-3');
+
+//         clockFont.classList.replace('scale-125', 'scale-100');
+//         clockP1.classList.replace('text-red-500', 'text-gray-600');
+//         clockP2.classList.replace('text-white', 'text-gray-400');
+//         clockP2.classList.replace('before:-translate-y-3', 'before:-translate-y-0');
+//     };
+// };
+
+
 function activeItem() {
     if (navigatedItem === 'clock') {
-        showClock.classList.remove('hidden');
-        showStopWatch.classList.add('hidden');
+        // showClock.classList.remove('hidden');
+        // showStopWatch.classList.add('hidden');
+        showClock.classList.replace('opacity-0', 'opacity-100');
+        showClock.classList.replace('z-0', 'z-10');
+        showClock.classList.replace('blur-md', 'blur-0');
+        showStopWatch.classList.replace('z-10', 'z-0');
+        showStopWatch.classList.replace('opacity-100', 'opacity-0');
+        showStopWatch.classList.replace('blur-0', 'blur-md');
+
         clockFont.classList.replace('scale-100', 'scale-125');
         clockP1.classList.replace('text-gray-600', 'text-red-500');
         clockP2.classList.replace('text-gray-400', 'text-white');
@@ -104,8 +140,15 @@ function activeItem() {
         stopWatchP2.classList.replace('text-white', 'text-gray-400');
         stopWatchP2.classList.replace('before:-translate-y-3', 'before:-translate-y-0');
     } else {
-        showStopWatch.classList.remove('hidden');
-        showClock.classList.add('hidden');
+        // showStopWatch.classList.remove('hidden');
+        // showClock.classList.add('hidden');
+        showStopWatch.classList.replace('opacity-0', 'opacity-100');
+        showStopWatch.classList.replace('z-0', 'z-10');
+        showStopWatch.classList.replace('blur-md', 'blur-0');
+        showClock.classList.replace('z-10', 'z-0');
+        showClock.classList.replace('opacity-100', 'opacity-0');
+        showClock.classList.replace('blur-0', 'blur-md');
+
         stopWatchFont.classList.replace('scale-100', 'scale-125');
         stopWatchP1.classList.replace('text-gray-600', 'text-red-500');
         stopWatchP2.classList.replace('text-gray-400', 'text-white');
@@ -154,7 +197,7 @@ changeFormat.addEventListener('click', () => {
 });
 
 //main function for clock time
-async function startTime() {
+function startTime() {
     setInterval(() => {
         //time
         let dateObject = new Date();
@@ -209,6 +252,6 @@ startTime();
 //                                     Loader
 let loader = document.querySelector('#loader');
 
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     loader.classList.add('hidden');
 });
