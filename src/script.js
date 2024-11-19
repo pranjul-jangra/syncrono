@@ -90,42 +90,16 @@ stopWatchFont.addEventListener('click', () => {
     activeItem();
 });
 
-// function activeItem() {
-//     if (navigatedItem === 'clock') {
-//         showClock.classList.remove('hidden');
-//         showStopWatch.classList.add('hidden');
-//         clockFont.classList.replace('scale-100', 'scale-125');
-//         clockP1.classList.replace('text-gray-600', 'text-red-500');
-//         clockP2.classList.replace('text-gray-400', 'text-white');
-//         clockP2.classList.replace('before:-translate-y-0', 'before:-translate-y-3');
-
-//         stopWatchFont.classList.replace('scale-125', 'scale-100');
-//         stopWatchP1.classList.replace('text-red-500', 'text-gray-600');
-//         stopWatchP2.classList.replace('text-white', 'text-gray-400');
-//         stopWatchP2.classList.replace('before:-translate-y-3', 'before:-translate-y-0');
-//     } else {
-//         showStopWatch.classList.remove('hidden');
-//         showClock.classList.add('hidden');
-//         stopWatchFont.classList.replace('scale-100', 'scale-125');
-//         stopWatchP1.classList.replace('text-gray-600', 'text-red-500');
-//         stopWatchP2.classList.replace('text-gray-400', 'text-white');
-//         stopWatchP2.classList.replace('before:-translate-y-0', 'before:-translate-y-3');
-
-//         clockFont.classList.replace('scale-125', 'scale-100');
-//         clockP1.classList.replace('text-red-500', 'text-gray-600');
-//         clockP2.classList.replace('text-white', 'text-gray-400');
-//         clockP2.classList.replace('before:-translate-y-3', 'before:-translate-y-0');
-//     };
-// };
-
 function activeItem() {
     if (navigatedItem === 'clock') {
         showClock.classList.replace('opacity-0', 'opacity-100');
         showClock.classList.replace('z-0', 'z-10');
         showClock.classList.replace('blur-md', 'blur-0');
+        showClock.classList.replace('scale-50', 'scale-100');
         showStopWatch.classList.replace('z-10', 'z-0');
         showStopWatch.classList.replace('opacity-100', 'opacity-0');
         showStopWatch.classList.replace('blur-0', 'blur-md');
+        showStopWatch.classList.replace('scale-100', 'scale-50');
 
         clockFont.classList.replace('scale-100', 'scale-125');
         clockP1.classList.replace('text-gray-600', 'text-red-500');
@@ -140,9 +114,11 @@ function activeItem() {
         showStopWatch.classList.replace('opacity-0', 'opacity-100');
         showStopWatch.classList.replace('z-0', 'z-10');
         showStopWatch.classList.replace('blur-md', 'blur-0');
+        showStopWatch.classList.replace('scale-50', 'scale-100');
         showClock.classList.replace('z-10', 'z-0');
         showClock.classList.replace('opacity-100', 'opacity-0');
         showClock.classList.replace('blur-0', 'blur-md');
+        showClock.classList.replace('scale-100', 'scale-50');
 
         stopWatchFont.classList.replace('scale-100', 'scale-125');
         stopWatchP1.classList.replace('text-gray-600', 'text-red-500');

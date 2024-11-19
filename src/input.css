@@ -145,6 +145,7 @@
     }
     .animation-loader {
         animation: bounceUp 2s infinite;
+        
     }
     @keyframes bounceUp {
         30% {
@@ -221,11 +222,6 @@
         .stopWatch-time{
             position: absolute;
             top: 13px;
-        }
-    }
-    @media (min-width:2000px){
-        body{
-            font-size: 3vw;
         }
     }
 }
