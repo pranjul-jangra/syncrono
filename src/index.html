@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="clock.png">
     <link rel="stylesheet" href="output.css">
 </head>
-<body class="bg-[url(bg.jpg)] bg-black bg-cover bg-center bg-no-repeat h-svh overflow-hidden cursor-default box-border no-scrollbar hide-scrollbar flex items-center justify-center">
+<body class="bg-[url(bg.jpg)] bg-black w-screen h-lvh flex justify-center items-center bg-cover bg-center bg-no-repeat overflow-hidden cursor-default box-border no-scrollbar hide-scrollbar">
     
     <!-- loader -->
     <div id="loader" class="w-screen h-screen flex justify-center items-center flex-col fixed top-0 left-0 z-50 loader-bg">
@@ -17,7 +17,7 @@
     </div>
 
     <!-- navigation panel --> 
-    <nav class="h-14 w-screen text-white uppercase text-xl font-bold flex justify-center items-center gap-48 gap-screen-450 gap-screen-385 fixed top-0">
+    <nav class="h-14 w-screen z-50 text-white uppercase text-xl font-bold flex justify-center items-center gap-48 gap-screen-450 gap-screen-385 fixed top-0">
 
         <!-- stopWatch font -->
         <div id="stopWatchFont" class="order-2 transition-all duration-700 items-end flex scale-100 text-shadow-white ">
@@ -40,12 +40,12 @@
         </div>
     </nav>
     
-
+    <div id="container" class="w-screen h-screen mt-7 flex flex-col justify-center items-center">
         <!-- clock: watch your time -->
-        <section id="clock" class="relative transition-all duration-1000 blur-0 z-10 opacity-100 translate-x-1/2 bg-slate-400 size-96 mob-size box-border border-[0.1px] border-[#df3f8b] flex flex-col justify-center items-center gap-3 rounded-full container-shadow container-screen-385 container-bg-gradient bg-blend-color-burn">
+        <section id="clock" class="relative main-section transition-all duration-1000 blur-0 z-10 opacity-100 translate-y-1/2 bg-slate-400 box-border border-[0.1px] border-[#df3f8b] flex flex-col justify-center items-center gap-3 container-shadow container-bg-gradient bg-blend-color-burn">
                 <h2 id="clock-title" class="sr-only">Online Clock : track your time over internet</h2>
                 <!-- toggle button  -->
-                <div class="mb-3 absolute top-16 left-auto flex justify-center items-center gap-1 text-md border-b-2 border-b-slate-400">
+                <div class="mb-3 timeFormat-position left-auto flex justify-center items-center gap-1 text-md border-b-2 border-b-slate-400">
                     <div id="twelveFormat" class="text-green-500 font-semibold text-shadow-black-sm">12 hour</div>
                     
                     <div id="changeFormat" class="w-11 h-4 rounded-full border-2 border-black bg-yellow-300 box-content before:size-4 before:rounded-full before:bg-black relative before:absolute before:top-0 before:left-0 before:translate-x-0 before:transition-all before:duration-300"></div>
@@ -57,7 +57,7 @@
                     <div id="clockDisplay" class="font-bold text-3xl mr-5 text-shadow-black-lg">00: 00: 00</div>
                     <div id="meridiems" class="font-semibold text-lime-300 border-l-2 border-t-[1px] shadow-sm shadow-teal-100 border-black px-1 text-sm text-shadow-black-sm rounded-sm"></div>
                 </div>
-                <div id="calendar" class="w-full flex justify-center mt-10 gap-x-5 grid-screen-385 capitalize relative before:w-full before:h-1 before:absolute before:-top-1 before:left-0 before:bg-gradient-to-r before:from-transparent before:via-slate-500 before:to-transparent text-md font-semibold text-slate-300 text-shadow-black-lg">
+                <div id="calendar" class="w-full flex justify-center calender-margin-top gap-x-5 calender-screen-385 capitalize relative before:w-full before:h-1 before:absolute before:-top-1 before:left-0 before:bg-gradient-to-r before:from-transparent before:via-slate-500 before:to-transparent text-md font-semibold text-slate-300 text-shadow-black-lg">
                     <div class="flex flex-col items-center">
                         <div class="text-sm font-bold">year:</div>
                         <div id="year" class="shadow-sm shadow-teal-50  text-yellow-600 px-1 text-center text-shadow-black-sm rounded-sm">year</div>
@@ -77,21 +77,20 @@
                 </div>
     
         </section>
-    
 
         <!-- stopWAtch: change your time -->
-        <section id="stopWatch" class="size-96 transition-all duration-1000 blur-md z-0 opacity-0 -translate-x-1/2 bg-slate-400 mob-size box-border border-[0.1px] border-[#df3f8b] flex flex-col justify-center items-center gap-3 rounded-full container-shadow container-screen-385 container-bg-gradient bg-blend-color-burn">
+        <section id="stopWatch" class="main-section stopWatch-section transition-all duration-1000 blur-md z-0 opacity-0 -translate-y-1/2 bg-slate-400 box-border border-[0.1px] border-[#df3f8b] flex flex-col justify-center items-center gap-3 container-shadow container-bg-gradient bg-blend-color-burn">
                 <h2 id="stopwatch-title" class="sr-only">Stopwatch : record your time over internet</h2>
     
-                <div id="stopWatchDisplay" class="font-bold text-3xl text-shadow-black-lg text-white">00: 00: 00</div>
-                <div class="mt-8 flex gap-6 mob-gap-buttons select-none">
+                <div id="stopWatchDisplay" class="font-bold stopWatch-time text-3xl text-shadow-black-lg text-white">00: 00: 00</div>
+                <div class="mt-8 buttons-flow flex gap-6 mob-gap-buttons select-none">
                     <button id="start" class="button mob-button hover:shadow-sm hover:shadow-green-600">start</button>
                     <button id="stop" class="button mob-button hidden hover:shadow-sm hover:shadow-yellow-600">stop</button>
                     <button id="reset" class="button mob-button hidden hover:shadow-sm hover:shadow-red-600">reset</button>
                 </div>
     
         </section>
-
+    </div>
 
 
     

@@ -35,24 +35,18 @@
     .no-scrollbar::-webkit-scrollbar {
         display: none;
     }
+    .calender-margin-top{
+        margin-top: 2.5rem;
+    }
     @media (max-width: 450px) {
         .gap-screen-450 {
             gap: 85px;
-        }
-        .mob-size {
-            size: 350px;
         }
         .mob-gap-buttons {
             gap: 1rem;
         }
     }
     @media (max-width: 385px) {
-        .container-screen-385 {
-            width: 95vw;
-            border: 4px solid black;
-            border-radius: 34px;
-            margin-top: 24px;
-        }
         .gap-screen-385 {
             gap: 38px;
         }
@@ -62,10 +56,16 @@
         .nav-text2-screen-385 {
             font-size: 1.1rem;
         }
-        .grid-screen-385 {
+        .calender-screen-385 {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             row-gap: 4px;
+        }
+        .timeFormat-position{
+            top: 0.9rem;
+        }
+        .calender-margin-top{
+            margin-top: 1rem;
         }
     }
 }
@@ -160,12 +160,72 @@
             transform: translateY(0rem);
         }
     }
+    .main-section{
+        width: 35vw;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        
+    }
+    .timeFormat-position{
+        position: absolute;
+        top: 4rem;
+    }
     @media (max-width: 450px) {
         .mob-button {
-            width: 4rem;
+            width: 4rem; 
             height: 1.55rem;
             font-size: 1.275rem;
             line-height: auto;
+        }
+    }
+    @media (max-width:1131px){
+        .main-section{
+            width: 40vw;
+        }
+    }
+    @media (max-width:988px){
+        .main-section{
+            width: 48vw;
+        }
+    }
+    @media (max-width:737px){
+        .main-section{
+            width: 55vw;
+            border-radius: 15%;
+        }
+    }
+    @media (max-width:594px){
+        .main-section{
+            width: 65vw;
+        }
+    }
+    @media (max-width:514px){
+        .main-section{
+            width: 79vw;
+        }
+        .timeFormat-position{
+            top: 2rem;
+        }
+    }
+    @media (max-width:298px){
+        .timeFormat-position{
+            opacity: 0;
+        }
+        .buttons-flow{
+            flex-direction: column;
+            gap: 3px;
+        }
+        .stopWatch-section{
+            position: relative;
+        }
+        .stopWatch-time{
+            position: absolute;
+            top: 13px;
+        }
+    }
+    @media (min-width:2000px){
+        body{
+            font-size: 3vw;
         }
     }
 }

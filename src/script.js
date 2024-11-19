@@ -118,11 +118,8 @@ stopWatchFont.addEventListener('click', () => {
 //     };
 // };
 
-
 function activeItem() {
     if (navigatedItem === 'clock') {
-        // showClock.classList.remove('hidden');
-        // showStopWatch.classList.add('hidden');
         showClock.classList.replace('opacity-0', 'opacity-100');
         showClock.classList.replace('z-0', 'z-10');
         showClock.classList.replace('blur-md', 'blur-0');
@@ -140,8 +137,6 @@ function activeItem() {
         stopWatchP2.classList.replace('text-white', 'text-gray-400');
         stopWatchP2.classList.replace('before:-translate-y-3', 'before:-translate-y-0');
     } else {
-        // showStopWatch.classList.remove('hidden');
-        // showClock.classList.add('hidden');
         showStopWatch.classList.replace('opacity-0', 'opacity-100');
         showStopWatch.classList.replace('z-0', 'z-10');
         showStopWatch.classList.replace('blur-md', 'blur-0');
@@ -160,6 +155,7 @@ function activeItem() {
         clockP2.classList.replace('before:-translate-y-3', 'before:-translate-y-0');
     };
 };
+
 
 //                                          CLOCK: WATCH YOUR TIME
 
