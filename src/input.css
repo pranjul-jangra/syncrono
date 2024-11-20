@@ -35,8 +35,26 @@
     .no-scrollbar::-webkit-scrollbar {
         display: none;
     }
-    .calender-margin-top{
+    .calender-margin-top {
         margin-top: 2.5rem;
+    }
+    .calender-indicators {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
+    .timer-font {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }
+    .nav-font-1 {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+    }
+    .nav-font-2 {
+        font-size: 20px;
+        &:before {
+            height: 0.125rem;
+        }
     }
     @media (max-width: 450px) {
         .gap-screen-450 {
@@ -61,11 +79,73 @@
             grid-template-columns: repeat(2, 1fr);
             row-gap: 4px;
         }
-        .timeFormat-position{
+        .timeFormat-position {
             top: 0.9rem;
         }
-        .calender-margin-top{
+        .calender-margin-top {
             margin-top: 1rem;
+        }
+    }
+    @media (min-width: 1760px) {
+        .timeFormat-font {
+            font-size: 1.2vw;
+        }
+        .section-font {
+            font-size: 1.4vw;
+            column-gap: 1.5vw;
+        }
+        .calender-indicators {
+            font-size: 1.1vw;
+            line-height: 1.3vw;
+        }
+        .timer-font {
+            font-size: 2vw;
+            line-height: 2.3vw;
+        }
+        .calender-margin-top {
+            margin-top: 4vw;
+        }
+        .button {
+            font-size: 1.4vw;
+            line-height: 0;
+            width: fit-content;
+            height: fit-content;
+            padding-inline: 30px;
+            padding-block: 30px;
+            border-radius: 10vw;
+        }
+        .button:before {
+            width: 200%;
+            height: 230%;
+            top: -4rem;
+            left: -2.5rem;
+        }
+        .button:after {
+            width: 200%;
+            height: 230%;
+            bottom: -4rem;
+            right: -2.5rem;
+        }
+        .button:hover {
+            &:before {
+                top: 2rem;
+                left: -2.5rem;
+            }
+            &:after {
+                bottom: 2rem;
+                right: -2.5rem;
+            }
+        }
+        .nav-font-1 {
+            font-size: 3vw;
+            margin-top: 1.7vw;
+        }
+        .nav-font-2 {
+            font-size: 1.7vw;
+            margin-top: 1.7vw;
+            &:before {
+                height: 0.16vw;
+            }
         }
     }
 }
@@ -145,7 +225,6 @@
     }
     .animation-loader {
         animation: bounceUp 2s infinite;
-        
     }
     @keyframes bounceUp {
         30% {
@@ -161,65 +240,64 @@
             transform: translateY(0rem);
         }
     }
-    .main-section{
+    .main-section {
         width: 35vw;
         aspect-ratio: 1/1;
         border-radius: 50%;
-        
     }
-    .timeFormat-position{
+    .timeFormat-position {
         position: absolute;
         top: 4rem;
     }
     @media (max-width: 450px) {
-        .mob-button {
-            width: 4rem; 
+        .button {
+            width: 4rem;
             height: 1.55rem;
             font-size: 1.275rem;
             line-height: auto;
         }
     }
-    @media (max-width:1131px){
-        .main-section{
+    @media (max-width: 1131px) {
+        .main-section {
             width: 40vw;
         }
     }
-    @media (max-width:988px){
-        .main-section{
+    @media (max-width: 988px) {
+        .main-section {
             width: 48vw;
         }
     }
-    @media (max-width:737px){
-        .main-section{
+    @media (max-width: 737px) {
+        .main-section {
             width: 55vw;
             border-radius: 15%;
         }
     }
-    @media (max-width:594px){
-        .main-section{
+    @media (max-width: 594px) {
+        .main-section {
             width: 65vw;
         }
     }
-    @media (max-width:514px){
-        .main-section{
+    @media (max-width: 514px) {
+        .main-section {
             width: 79vw;
         }
-        .timeFormat-position{
+        .timeFormat-position {
             top: 2rem;
         }
     }
-    @media (max-width:298px){
-        .timeFormat-position{
+    @media (max-width: 298px) {
+        .timeFormat-position {
             opacity: 0;
         }
-        .buttons-flow{
+        .buttons-flow {
             flex-direction: column;
             gap: 3px;
         }
-        .stopWatch-section{
+        .stopWatch-section {
             position: relative;
         }
-        .stopWatch-time{
+        .stopWatch-time {
             position: absolute;
             top: 13px;
         }
