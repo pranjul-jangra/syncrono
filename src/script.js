@@ -31,8 +31,8 @@ start.addEventListener('click', (e) => {
         let minute = `0${minutes}`;
         let hour = `0${hours}`;
 
-        stopWatchDisplay.textContent = `${hours.toString().length === 2 ? hours : hour}:
-        ${minutes.toString().length === 2 ? minutes : minute}:
+        stopWatchDisplay.textContent = `${hours.toString().length === 2 ? hours : hour} :
+        ${minutes.toString().length === 2 ? minutes : minute} :
         ${seconds.toString().length === 2 ? seconds : second}`;
 
         if (seconds === 59) {
@@ -59,7 +59,7 @@ reset.addEventListener('click', (e) => {
     target = reset;
     clearInterval(manipulateTime);
     seconds = 0, minutes = 0, hours = 0;
-    stopWatchDisplay.textContent = '00: 00: 00';
+    stopWatchDisplay.textContent = '00 : 00 : 00';
     stop.classList.add('hidden');
     reset.classList.add('hidden');
     disableButton(target);
@@ -93,10 +93,11 @@ stopWatchFont.addEventListener('click', () => {
 function activeItem() {
     if (navigatedItem === 'clock') {
         showClock.classList.replace('opacity-0', 'opacity-100');
-        showClock.classList.replace('z-0', 'z-10');
+        showClock.classList.replace('z-0', 'z-40');
         showClock.classList.replace('blur-md', 'blur-0');
         showClock.classList.replace('scale-50', 'scale-100');
-        showStopWatch.classList.replace('z-10', 'z-0');
+
+        showStopWatch.classList.replace('z-40', 'z-0');
         showStopWatch.classList.replace('opacity-100', 'opacity-0');
         showStopWatch.classList.replace('blur-0', 'blur-md');
         showStopWatch.classList.replace('scale-100', 'scale-50');
@@ -104,19 +105,21 @@ function activeItem() {
         clockFont.classList.replace('scale-100', 'scale-125');
         clockP1.classList.replace('text-gray-600', 'text-red-500');
         clockP2.classList.replace('text-gray-400', 'text-white');
-        clockP2.classList.replace('before:bottom-3', 'before:bottom-full');
+        clockP2.classList.replace('before:bottom-[45%]', 'before:bottom-full');
+        clockP2.classList.replace('before:opacity-100', 'before:opacity-0');
 
         stopWatchFont.classList.replace('scale-125', 'scale-100');
         stopWatchP1.classList.replace('text-red-500', 'text-gray-600');
         stopWatchP2.classList.replace('text-white', 'text-gray-400');
-        stopWatchP2.classList.replace('before:bottom-full', 'before:bottom-3');
+        stopWatchP2.classList.replace('before:bottom-full', 'before:bottom-[45%]');
+        stopWatchP2.classList.replace('before:opacity-0', 'before:opacity-100');
     } else {
         showStopWatch.classList.replace('opacity-0', 'opacity-100');
-        showStopWatch.classList.replace('z-0', 'z-10');
+        showStopWatch.classList.replace('z-0', 'z-40');
         showStopWatch.classList.replace('blur-md', 'blur-0');
         showStopWatch.classList.replace('scale-50', 'scale-100');
 
-        showClock.classList.replace('z-10', 'z-0');
+        showClock.classList.replace('z-40', 'z-0');
         showClock.classList.replace('opacity-100', 'opacity-0');
         showClock.classList.replace('blur-0', 'blur-md');
         showClock.classList.replace('scale-100', 'scale-50');
@@ -124,12 +127,14 @@ function activeItem() {
         stopWatchFont.classList.replace('scale-100', 'scale-125');
         stopWatchP1.classList.replace('text-gray-600', 'text-red-500');
         stopWatchP2.classList.replace('text-gray-400', 'text-white');
-        stopWatchP2.classList.replace('before:bottom-3', 'before:bottom-full');
+        stopWatchP2.classList.replace('before:bottom-[45%]', 'before:bottom-full');
+        stopWatchP2.classList.replace('before:opacity-100', 'before:opacity-0');
 
         clockFont.classList.replace('scale-125', 'scale-100');
         clockP1.classList.replace('text-red-500', 'text-gray-600');
         clockP2.classList.replace('text-white', 'text-gray-400');
-        clockP2.classList.replace('before:bottom-full', 'before:bottom-3');
+        clockP2.classList.replace('before:bottom-full', 'before:bottom-[45%]');
+        clockP2.classList.replace('before:opacity-0', 'before:opacity-100');
     };
 };
 
@@ -158,12 +163,12 @@ let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'S
 changeFormat.addEventListener('click', () => {
     if (changeFormat.classList.contains('before:translate-x-0')) {
         timeFormat = '24hours';
-        changeFormat.classList.replace('before:translate-x-0', 'before:translate-x-7');
+        changeFormat.classList.replace('before:translate-x-0', 'before:translate-x-[calc(var(--width)-var(--height))]');
         twelveFormat.classList.replace('text-green-500', 'text-slate-400');
         twentyFourFormat.classList.replace('text-slate-400', 'text-green-500');
     } else {
         timeFormat = '12hours';
-        changeFormat.classList.replace('before:translate-x-7', 'before:translate-x-0');
+        changeFormat.classList.replace('before:translate-x-[calc(var(--width)-var(--height))]', 'before:translate-x-0');
         twentyFourFormat.classList.replace('text-green-500', 'text-slate-400');
         twelveFormat.classList.replace('text-slate-400', 'text-green-500');
     };
@@ -188,12 +193,12 @@ function startTime() {
                 hours -= 12;
                 hr = `0${hours}`;
             };
-            clockDisplay.textContent = `${hours.toString().length === 2 ? hours : hr}:
-        ${minutes.toString().length === 2 ? minutes : min}:
+            clockDisplay.textContent = `${hours.toString().length === 2 ? hours : hr} :
+        ${minutes.toString().length === 2 ? minutes : min} :
         ${seconds.toString().length === 2 ? seconds : sec}`;
         } else {
-            clockDisplay.textContent = `${hours.toString().length === 2 ? hours : hr}:
-        ${minutes.toString().length === 2 ? minutes : min}:
+            clockDisplay.textContent = `${hours.toString().length === 2 ? hours : hr} :
+        ${minutes.toString().length === 2 ? minutes : min} :
         ${seconds.toString().length === 2 ? seconds : sec}`;
         };
 
