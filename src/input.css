@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities{
+@layer utilities {
     .animation-loader {
         animation: bounceUp 2s infinite;
     }
@@ -26,24 +26,22 @@
     .noscrollbar::-webkit-scrollbar {
         display: none;
     }
-    .bg-custom-gradient{
+    .bg-custom-gradient {
         background-image: linear-gradient(to top left, #334155dc 50%, rgba(158, 130, 134, 0.772) 50%);
     }
-    .text-shadow-white{
+    .text-shadow-white {
         text-shadow: 0.07vw 0.06vw rgb(225, 224, 224);
     }
-    .text-shadow-black{
+    .text-shadow-black {
         text-shadow: 0.06vw 0.06vw black;
-    } 
-    .box-shadow-inset{
+    }
+    .box-shadow-inset {
         box-shadow: inset 0 0 20px #000000;
     }
 }
 
-
-
-@layer components{
-    .buttons{
+@layer components {
+    .buttons {
         padding-inline: 1.2vw;
         border-radius: 8px;
         line-height: 3vw;
@@ -56,8 +54,8 @@
         position: relative;
         overflow: hidden;
         isolation: isolate;
-        &::after{
-            content: '';
+        &::after {
+            content: "";
             position: absolute;
             right: -1vw;
             bottom: 0.6vw;
@@ -76,9 +74,9 @@
             transition: all 0.4s ease-out;
             mix-blend-mode: color;
         }
-        &::before{
+        &::before {
             mix-blend-mode: color;
-            content: '';
+            content: "";
             position: absolute;
             left: -1vw;
             top: 0.6vw;
@@ -96,40 +94,41 @@
             transform: rotate(22deg) translateY(4vw);
             transition: all 0.4s ease-out;
         }
-        &:hover{
+        &:hover {
             box-shadow: 1px 1px 1.2px var(--btnColor);
             transition: all 0.4s;
-            &::after{
+            &::after {
                 transform: rotate(-338deg) translateY(0);
             }
-            &::before{
+            &::before {
                 transform: rotate(22deg) translateY(0);
             }
         }
     }
-    .toggler{
-        --width:3.58vw;
+    .toggler {
+        --width: 3.58vw;
         --height: 1.4vw;
         width: var(--width);
         height: var(--height);
         transition: all 0.5s;
-        &::before{
+        &::before {
             width: var(--height);
             aspect-ratio: 1/1;
         }
     }
-    @media (max-width:640px){
-        .buttons{
-            padding-inline: 2vw;
-            line-height: 5.2vw;
-            &::after{
-                transform: rotate(-338deg) translateY(-8vw);
+    @media (max-width: 640px) {
+        .buttons {
+            padding-inline: 3vw;
+            line-height: 7vw;
+            background-color: rgb(69, 69, 244);
+            &::after {
+                transform: rotate(-338deg) translateY(-10vw);
             }
-            &::before{
-                transform: rotate(22deg) translateY(8vw);
+            &::before {
+                transform: rotate(22deg) translateY(10vw);
             }
         }
-        .toggler{
+        .toggler {
             --width: 6vw;
             --height: 2.7vw;
         }
