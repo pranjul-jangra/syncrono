@@ -1,4 +1,4 @@
-//                                         STOP WATCH: MANIPULATE YOUR TIME
+//                  STOP WATCH: MANIPULATE YOUR TIME
 
 // DOM getters
 let stopWatchDisplay = document.querySelector('#stopWatchDisplay');
@@ -22,7 +22,7 @@ function disableButton(target) {
     target.classList.add('bg-slate-400', 'opacity-70', 'border-gray-900');
 };
 
-// stopWatch timing and manipulating buttons
+//           stopWatch timing and manipulating buttons
 start.addEventListener('click', (e) => {
     target = start;
     manipulateTime = setInterval(() => {
@@ -65,7 +65,7 @@ reset.addEventListener('click', (e) => {
     disableButton(target);
 });
 
-//                                  navigating between clock and stopWatch
+//                  navigating between clock and stopWatch
 //DOM getters
 let stopWatchFont = document.querySelector('#stopWatchFont');
 let clockFont = document.querySelector('#clockFont');
@@ -139,7 +139,7 @@ function activeItem() {
 };
 
 
-//                                          CLOCK: WATCH YOUR TIME
+//                 CLOCK: WATCH YOUR TIME
 
 
 //DOM getters

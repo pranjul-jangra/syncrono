@@ -41,10 +41,10 @@
     
     <div id="container" class="w-screen noscrollbar h-[37vw] max-sm:h-[120vw] mt-[5vw] max-sm:mt-[18vw] relative flex flex-col justify-center overflow-visible items-center">
         <!-- clock: watch your time -->
-        <section id="clock" class="box-shadow-inset absolute top-3 text-shadow-black w-[34vw] max-sm:w-[93vw] max-sm:h-[93vw] max-sm:rounded-md bg-custom-gradient aspect-square rounded-full border-[0.1px] bg-blend-color-burn bg-slate-400 border-[#df3f8b] transition-all duration-500 z-40 scale-100 blur-0 opacity-100 flex flex-col justify-center items-center overflow-clip">
+        <section id="clock" class="box-shadow-inset absolute top-3 text-shadow-black w-[34vw] max-sm:w-[93vw] max-sm:h-[93vw] section-border bg-custom-gradient aspect-square border-[0.1px] bg-blend-color-burn bg-slate-400 border-[#df3f8b] transition-all duration-500 z-40 scale-100 blur-0 opacity-100 flex flex-col justify-center items-center overflow-clip">
                 <h2 class="sr-only">Online Clock : track your time over internet</h2>
                 <!-- toggle button  -->
-                <div class="absolute top-[3vw] pb-1 flex items-end gap-1 text-[1.3vw] max-sm:text-[3vw] font-bold border-b-2 border-b-gray-500">
+                <div class="absolute top-[3vw] pb-1 flex items-end gap-1 text-[1.3vw] max-sm:text-[4.2vw] font-bold border-b-2 border-b-gray-500">
                     <div id="twelveFormat" class="text-green-500">12 hour</div>
                     
                     <div id="changeFormat" class="toggler rounded-full border-2 border-black bg-yellow-300 box-content before:rounded-full before:bg-black relative before:absolute before:top-0 before:left-0 before:translate-x-0 before:transition-all before:duration-300"></div>
@@ -53,11 +53,11 @@
                 </div>
 
                 <!-- clock display-->
-                <div class="flex items-end gap-[0.8vw]">
+                <div class="flex items-end gap-[0.8vw] max-sm:gap-[2.2vh]">
                     <div id="clockDisplay" class="text-[3vw] max-sm:text-[8vw] leading-none font-bold">00 : 00 : 00</div>
                     <div id="meridiems" class="text-lime-300 text-[1.1vw] max-sm:text-[2.5vw] font-semibold px-1 rounded-sm shadow-sm mb-1 shadow-yellow-200"></div>
                 </div>
-                <div id="calendar" class="w-full pt-[1vw] text-[1.2vw] max-sm:text-[2.9vw] font-semibold capitalize flex justify-center items-center gap-[1.4vw] max-sm:gap-[2.9vw] mt-[5vw] max-sm:mt-[8vw] relative before:absolute before:top-0 before:left-0 before:w-full before:h-[0.4vw] before:bg-gradient-to-r before:from-transparent before:via-slate-600 before:to-transparent">
+                <div id="calendar" class="w-full pt-[1vw] text-[1.2vw] max-sm:text-[4.2vw] font-semibold capitalize flex justify-center items-center gap-[1.4vw] max-sm:gap-[2.9vw] mt-[5vw] max-sm:mt-[8vw] relative before:absolute before:top-0 before:left-0 before:w-full before:h-[0.4vw] before:bg-gradient-to-r before:from-transparent before:via-slate-600 before:to-transparent">
                     <div class="flex flex-col items-center">
                         <div>year:</div>
                         <div id="year" class="backdrop-brightness-110 backdrop-blur-sm shadow-sm shadow-teal-50  text-yellow-600 px-1 text-center rounded-sm">year</div>
@@ -79,7 +79,7 @@
         </section>
  
         <!-- stopWAtch: change your time -->
-        <section id="stopWatch" class="box-shadow-inset absolute top-3 w-[34vw] max-sm:w-[93vw] max-sm:h-[93vw] max-sm:rounded-md text-shadow-black bg-custom-gradient aspect-square rounded-full border-[0.1px] bg-blend-color-burn bg-slate-400 border-[#df3f8b] transition-all duration-500 z-0 scale-50 blur-md opacity-0 flex flex-col justify-center items-center gap-[3.6vw] overflow-clip">
+        <section id="stopWatch" class="box-shadow-inset absolute top-3 w-[34vw] max-sm:w-[93vw] max-sm:h-[93vw] section-border text-shadow-black bg-custom-gradient aspect-square border-[0.1px] bg-blend-color-burn bg-slate-400 border-[#df3f8b] transition-all duration-500 z-0 scale-50 blur-md opacity-0 flex flex-col justify-center items-center gap-[3.6vw] overflow-clip">
                 <h2 class="sr-only">Stopwatch : record your time over internet</h2>
     
                 <div id="stopWatchDisplay" class="text-[3vw] max-sm:text-[8vw] leading-none font-bold">00 : 00 : 00</div>
