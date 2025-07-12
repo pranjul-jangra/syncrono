@@ -3,94 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Track, watch, and manage your time with our online digital clock and online stopwatch. Customize your time management experience.">
-    <title>Online digital Clock and online Stopwatch: Track, Watch, and Manage Your Time over internet</title>
-    <link rel="icon" type="image/png" href="clock.png">
-    <link rel="stylesheet" href="output.css">
+    <meta name="description" content="Advanced time management suite with clock, stopwatch, timer, and world clock features">
+    <title>Syncrono - Advanced Time Management Suite</title>
+    <link rel="icon" type="image/png" href="./assets/clock.png">
+    <link rel="stylesheet" href="./output.css">
 </head>
-<body class="bg-black bg-[url(bg.jpg)] bg-cover bg-center bg-no-repeat w-screen h-screen text-white noscrollbar">
-    
-    <!-- loader -->
-    <div id="loader" class="w-screen h-screen flex flex-col justify-center items-center">
-        <img src="confused.svg" alt="wait" class="size-14 mb-1 animation-loader z-50">
-        <div class="text-white text-3xl font-bold z-50">Loading...</div>
+<body>
+
+    <div class="relative min-h-dvh flex flex-col">
+        <header class="header sticky top-0 left-0 z-50 flex justify-between items-center backdrop-blur-md px-5 py-2">
+            <div class="logo">⏰ Syncrono</div>
+            <div class="flex items-center gap-2">
+                <button class="theme-btn px-3 py-2 rounded-xl cursor-pointer" id="themeBtn">🌙 Dark</button>
+            </div>
+        </header>
+
+        <nav class="max-md:flex-wrap max-md:gap-2 flex justify-center gap-5 py-2 *:px-4 *:py-2 *:rounded-full *:cursor-pointer *:overflow-hidden *:relative">
+            <div class="nav-item active" data-module="clock">🕐 Clock</div>
+            <div class="nav-item" data-module="stopwatch">⏱️ Stopwatch</div>
+            <div class="nav-item" data-module="timer">⏲️ Timer</div>
+            <div class="nav-item" data-module="worldclock">🌍 World Clock</div>
+            <div class="nav-item" data-module="alarm">⏰ Alarm</div>
+        </nav>
+
+        <main class="flex items-center justify-center relative p-5">
+            <!-- Clock Module -->
+            <div class="module active" id="clock">
+                <h2 class="module-title">Digital Clock</h2>
+                <div class="format-toggle">
+                    <div class="format-option active" data-format="12">12 Hour</div>
+                    <div class="format-option" data-format="24">24 Hour</div>
+                </div>
+                <div class="time-display" id="clockDisplay">00:00:00</div>
+                <div class="date-display" id="dateDisplay">Loading...</div>
+            </div>
+
+            <!-- Stopwatch Module -->
+            <div class="module" id="stopwatch">
+                <h2 class="module-title">Stopwatch</h2>
+                <div class="time-display" id="stopwatchDisplay">00:00:00</div>
+                <div class="controls">
+                    <button class="btn btn-primary" id="startStopwatch">Start</button>
+                    <button class="btn btn-warning" id="pauseStopwatch" style="display: none;">Pause</button>
+                    <button class="btn btn-danger" id="resetStopwatch" style="display: none;">Reset</button>
+                    <button class="btn" id="lapStopwatch" style="display: none;">Lap</button>
+                </div>
+                <div id="lapTimes" style="margin-top: 20px;"></div>
+            </div>
+
+            <!-- Timer Module -->
+            <div class="module" id="timer">
+                <h2 class="module-title">Timer</h2>
+                <div class="timer-input">
+                    <div>
+                        <label>Hours</label>
+                        <input type="number" id="timerHours" min="0" max="23" value="0">
+                    </div>
+                    <div>
+                        <label>Minutes</label>
+                        <input type="number" id="timerMinutes" min="0" max="59" value="0">
+                    </div>
+                    <div>
+                        <label>Seconds</label>
+                        <input type="number" id="timerSeconds" min="0" max="59" value="0">
+                    </div>
+                </div>
+                <svg class="progress-ring" width="120" height="120">
+                    <circle class="progress-ring-circle" cx="60" cy="60" r="50" id="timerProgress"></circle>
+                </svg>
+                <div class="time-display" id="timerDisplay">00:00:00</div>
+                <div class="controls">
+                    <button class="btn btn-primary" id="startTimer">Start</button>
+                    <button class="btn btn-warning" id="pauseTimer" style="display: none;">Pause</button>
+                    <button class="btn btn-danger" id="resetTimer" style="display: none;">Reset</button>
+                </div>
+            </div>
+
+            <!-- World Clock Module -->
+            <div class="module" id="worldclock">
+                <h2 class="module-title">World Clock</h2>
+                <div class="world-clock-grid" id="worldClockGrid"></div>
+            </div>
+
+            <!-- Alarm Module -->
+            <div class="module" id="alarm">
+                <h2 class="module-title">Alarm</h2>
+                <div class="timer-input">
+                    <div>
+                        <label>Hours</label>
+                        <input type="number" id="alarmHours" min="0" max="23" value="0">
+                    </div>
+                    <div>
+                        <label>Minutes</label>
+                        <input type="number" id="alarmMinutes" min="0" max="59" value="0">
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="btn btn-primary" id="addAlarm">Add Alarm</button>
+                </div>
+                <div class="alarm-list" id="alarmList"></div>
+            </div>
+        </main>
     </div>
 
-    <!-- navigation panel --> 
-    <nav class="fixed top-0 z-50 bg-[#00000067] backdrop-blur-sm select-none cursor-default left-0 w-screen text-white flex justify-center items-center gap-[23vw]">
-        <!-- stopWatch font -->
-        <div id="stopWatchFont" class="scale-100 text-shadow-white font-bold flex items-end uppercase tracking-tight mt-[0.6vw] transition-all duration-700 order-2">
-            <p id="stopWatchP1" class="text-[3vw] max-sm:text-[30px] max-sm:leading-tight mr-0.5 leading-none text-gray-600 transition-all duration-700">
-                S
-                <p id="stopWatchP2" class="text-gray-400 leading-tight max-sm:leading-snug text-[2vw] max-sm:text-[23px] transition-all duration-700 relative before:absolute before:left-0 before:bottom-[45%] before:w-full before:h-[0.26vw] before:opacity-0 before:bg-red-500 before:rounded-full before:transition-all before:duration-1000">
-                    topwatch
-                </p>
-            </p>
-        </div>
-        
-        <!-- clock font  -->
-        <div id="clockFont" class="scale-100 text-shadow-white font-bold flex items-end uppercase tracking-tight mt-[0.6vw] transition-all duration-700">
-            <p id="clockP1" class="text-[3vw] max-sm:text-[30px] max-sm:leading-tight mr-0.5 leading-none text-gray-600 transition-all duration-700">
-                C
-                <p id="clockP2" class="text-gray-400 leading-tight max-sm:leading-snug text-[2vw] max-sm:text-[23px] transition-all duration-700 relative before:absolute before:left-0 before:bottom-[45%] before:w-full before:h-[0.26vw] before:opacity-100 before:bg-red-500 before:rounded-full before:transition-all before:duration-1000">
-                    lock
-                </p>
-            </p>
-        </div>
-    </nav>
-    
-    <div id="container" class="w-screen noscrollbar h-[37vw] max-sm:h-[120vw] mt-[5vw] max-sm:mt-[18vw] relative flex flex-col justify-center overflow-visible items-center">
-        <!-- clock: watch your time -->
-        <section id="clock" class="box-shadow-inset absolute top-3 text-shadow-black w-[34vw] max-sm:w-[93vw] max-sm:h-[93vw] section-border bg-custom-gradient aspect-square border-[0.1px] bg-blend-color-burn bg-slate-400 border-[#df3f8b] transition-all duration-500 z-40 scale-100 blur-0 opacity-100 flex flex-col justify-center items-center overflow-clip">
-                <h2 class="sr-only">Online Clock : track your time over internet</h2>
-                <!-- toggle button  -->
-                <div class="absolute top-[3vw] pb-1 flex items-end gap-1 text-[1.3vw] max-sm:text-[4.2vw] font-bold border-b-2 border-b-gray-500">
-                    <div id="twelveFormat" class="text-green-500">12 hour</div>
-                    
-                    <div id="changeFormat" class="toggler rounded-full border-2 border-black bg-yellow-300 box-content before:rounded-full before:bg-black relative before:absolute before:top-0 before:left-0 before:translate-x-0 before:transition-all before:duration-300"></div>
-    
-                    <div id="twentyFourFormat" class="text-slate-400">24 hour</div>
-                </div>
-
-                <!-- clock display-->
-                <div class="flex items-end gap-[0.8vw] max-sm:gap-[2.2vh]">
-                    <div id="clockDisplay" class="text-[3vw] max-sm:text-[8vw] leading-none font-bold">00 : 00 : 00</div>
-                    <div id="meridiems" class="text-lime-300 text-[1.1vw] max-sm:text-[2.5vw] font-semibold px-1 rounded-sm shadow-sm mb-1 shadow-yellow-200"></div>
-                </div>
-                <div id="calendar" class="w-full pt-[1vw] text-[1.2vw] max-sm:text-[4.2vw] font-semibold capitalize flex justify-center items-center gap-[1.4vw] max-sm:gap-[2.9vw] mt-[5vw] max-sm:mt-[8vw] relative before:absolute before:top-0 before:left-0 before:w-full before:h-[0.4vw] before:bg-gradient-to-r before:from-transparent before:via-slate-600 before:to-transparent">
-                    <div class="flex flex-col items-center">
-                        <div>year:</div>
-                        <div id="year" class="backdrop-brightness-110 backdrop-blur-sm shadow-sm shadow-teal-50  text-yellow-600 px-1 text-center rounded-sm">year</div>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div>month:</div>
-                        <div id="month" class="backdrop-brightness-110 backdrop-blur-sm shadow-sm shadow-teal-50  text-yellow-600 px-1 text-center rounded-sm">month</div>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div>date:</div>
-                        <div id="date" class="backdrop-brightness-110 backdrop-blur-sm shadow-sm shadow-teal-50  text-yellow-600 px-2 text-center rounded-sm">date</div>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div>day:</div>
-                        <div id="day" class="backdrop-brightness-110 backdrop-blur-sm shadow-sm shadow-teal-50  text-yellow-600 px-1 text-center rounded-sm">day</div>
-                    </div>
-                </div>
-    
-        </section>
- 
-        <!-- stopWAtch: change your time -->
-        <section id="stopWatch" class="box-shadow-inset absolute top-3 w-[34vw] max-sm:w-[93vw] max-sm:h-[93vw] section-border text-shadow-black bg-custom-gradient aspect-square border-[0.1px] bg-blend-color-burn bg-slate-400 border-[#df3f8b] transition-all duration-500 z-0 scale-50 blur-md opacity-0 flex flex-col justify-center items-center gap-[3.6vw] overflow-clip">
-                <h2 class="sr-only">Stopwatch : record your time over internet</h2>
-    
-                <div id="stopWatchDisplay" class="text-[3vw] max-sm:text-[8vw] leading-none font-bold">00 : 00 : 00</div>
-                <div class="text-[2vw] max-sm:text-[5vw] flex items-center gap-[0.8vw] max-sm:gap-[2.9vw]">
-                    <button id="start" style="--btnColor:green;" class="buttons">start</button>
-                    <button id="stop" style="--btnColor:orange;" class="hidden buttons">stop</button>
-                    <button id="reset" style="--btnColor:red;" class="hidden buttons">reset</button>
-                </div>
-        </section>
-    </div>
-    
     <script src="script.js"></script>
 </body>
 </html>
